@@ -147,14 +147,14 @@ def main():
     
     api_key = get_api_key("config.txt")
     if not api_key:
-        print("Ошибка: не удалось загрузить API-ключ. Проверьте app_errors.log")
+        print("Ошибка: не удалось загрузить API-ключ. Проверьте main_logs.log")
         return
 
     client = OpenAI(api_key=api_key, base_url="https://api.deepseek.com/v1")
     
     reviews = load_reviews("reviews.csv")
     if not reviews:
-        print("Ошибка: файл данных пуст или не найден. Проверьте app_errors.log")
+        print("Ошибка: файл данных пуст или не найден. Проверьте main_logs.log")
         return
         
     results = []
